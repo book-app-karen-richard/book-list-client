@@ -2,9 +2,61 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Book App</title>
+
+    <script id="book-template" type="text/x-handlebars-template">
+
+
+     <header>
+       <h1>{{title}}</h1>
+       <h2>{{title}}</h2
+     </header>
+
+  </script>
+
   </head>
+
   <body>
     <h1>Hello World</h1>
+
+    <main>
+
+    <section id="books" class="tab-content">
+
+        <header class="site-header clearfix">
+          <section class="heading-group-h1">
+            <h1>
+              Book App
+            </h1>
+
+          </section>  Welcome to my Book App
+
+          <nav class="main-nav">
+            <div class="icon-menu"></div>
+            <ul>
+              <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
+              <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+            </ul>
+          </nav>
+
+        </header>
+
+        <section id="about" class="tab-content">
+          <header>
+            Welcome to my Book
+          </header>
+        <section>
+          <h1>Some of my interests:</h1>
+          <ul>
+            <li>Coding</li>
+            <li>Petting dogs</li>
+            <li>Hanging with my family</li>
+          </ul>
+        </section>
+
+
+    </main>
+
   </body>
+
 </html>
