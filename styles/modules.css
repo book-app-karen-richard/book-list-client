@@ -1,5 +1,5 @@
 .header-content a img{
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 10px;
   width: 100px;
 }
@@ -14,9 +14,23 @@
   margin-bottom: 10px;
 }
 
+.book-view ul {
+  display: block;
+  width: 480px;
+}
+
 .book-view li {
   float: left;
-  margin-right: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.book-view li:last-child {
+  margin-right: 0px;
+}
+
+.book-container img {
+  width: 140px;
 }
 
 .book-overlay h3 {
