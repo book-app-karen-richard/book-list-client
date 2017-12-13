@@ -2,60 +2,60 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book App</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/icons.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/modules.css">
 
-    <script id="book-template" type="text/x-handlebars-template">
+<!-- Application templates -->
+    <script id="error-template" type="text/x-handlebars-template">
+      <h3>Something wnet wrong!!</h3>
+      <p>{{status}}: {{statusText}}</p>
+    </script>
 
-
-     <header>
-       <h1>{{title}}</h1>
-       <h2>{{title}}</h2
-     </header>
-
-  </script>
+    <script id="book-list-template" type="text/x-handlebars-template">
+      <li class="book-items" data-bookid={{book_id}}>
+        <div class="book-container">
+          <img src={{image_url}}>
+          <div class="book-overlay">
+            <h3>{{title}}</h3>
+            <p>{{author}}</p>
+          </div>
+        </div>
+      </li>
+    </script>
 
   </head>
 
   <body>
-    <h1>Hello World</h1>
 
-    <main>
+  <header>
+    <div class="header-content">
+      <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
+      <h1>Karen & Richard Books</h1>
+    </div>
+  </header>
 
-    <section id="books" class="tab-content">
+  <main>
+    <section class="error-view container">
+        <h2 class="view-title">There's an error</h2>
+        <section id="error-message"></section>
+    </section>
 
-        <header class="site-header clearfix">
-          <section class="heading-group-h1">
-            <h1>
-              Book App
-            </h1>
-
-          </section>  Welcome to my Book App
-
-          <nav class="main-nav">
-            <div class="icon-menu"></div>
-            <ul>
-              <li class="tab" data-content="articles"><a href="#" class="icon-home"> Home</a></li>
-              <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
-            </ul>
-          </nav>
-
-        </header>
-
-        <section id="about" class="tab-content">
-          <header>
-            Welcome to my Book
-          </header>
-        <section>
-          <h1>Some of my interests:</h1>
-          <ul>
-            <li>Coding</li>
-            <li>Petting dogs</li>
-            <li>Hanging with my family</li>
-          </ul>
+    <section class="book-view container">
+        <h2 class="view-title">BOOKS!</h2>
+        <section class="book-list">
+          <ul id="book-list"></ul>
         </section>
-
-
+      </section>
     </main>
+
+<!-- Applicatoin Resource -->
+<script src="./script/views/book-view.js" ></script>
+<script src="./script/views/error-view.js" ></script>
 
   </body>
 
