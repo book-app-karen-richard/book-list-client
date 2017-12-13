@@ -3,35 +3,23 @@
 var app = app || {};
 
 (function(module) {
+
   const bookView = {};
 
   bookView.initIndexPage = function() {
-    $('.container').hide();
-    console.log('in init index');
+    console.log('init');
+    $('.error-view-container').hide();
     $('.book-view').show();
     $('#book-list').empty();
-    app.Book.all.map(book => $('#book-list').append(book.toHtml());
+    console.log('a');
+    app.Book.all.map(book => $('#book-list').append(book.toHtml()));
+    console.log('b');
   }
 
-  // bookView.initAddForm = function() {
-  //   reset();
-  //   $('.add-view').show();
-  //   $('#add-form').on('submit', function(e) {
-  //     e.prevemtDefault();
-  //
-  //     let book = {
-  //       author: e.target.author.value;
-  //       title: e.target.title.value;
-  //       isbn: e.target.isbn.value;
-  //       image_url: e.target.image_url.value;
-  //       description: e.target.description.value;
-  //       }
-  //   })
-  // }
+  $(function() {
+    app.Book.fetchAll(app.bookView.initIndexPage);
+  })
 
   module.bookView = bookView;
-})(app)
 
-$(function() {
-  app.Book.fetchAll(app.bookView.initIndexPage);
-})
+})(app)

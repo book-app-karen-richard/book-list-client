@@ -1,34 +1,50 @@
 'use strict';
 
 var app =  app || {};
-var __API_URL__ = 'http;//localhost:3000' || kp-rm-booklist.herokuapp.com;
 
-function(module) {
+var __API_URL__ = 'http://localhost:3000';
+
+(function (module) {
 
 function errorCallback(err) {
   console.error(err);
-  module.errorView.initErrorPage(err);
+  app.errorView.initErrorPage(err);
 }
 
-function Book (rawDataObj) {
-Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
-}
+function Book (bookObj) {
+  this.book_id = bookObj.book_id;
+  this.author = bookObj.author;
+  this.title = bookObj.title;
+  this.image_url = bookObj.image_url;
+  console.log('book_id', this.book_id);
+  }
 
 Book.prototype.toHtml = function () {
+  console.log('tohtml');
   let template = Handlebars.compile($('#book-list-template').text());
+  console.log('temp',template);
   return template(this);
 }
 
-BOOK.all = [];
+Book.all = [];
 
-Book.loadAll = rows => Book.all = rows.sort((a,b) => b.title - a.title).map(book => new Book(book));
+Book.loadAll = function (rows) {
+  console.log('rows',rows);
+  Book.all = rows.map(function(book) {
+     return new Book(book);
+   })
+   console.log('Book.all ', Book.all);
+};
 
-Book.fetchAll = callback =>
-$.get(`${__API_URL__}/api/vi/books`)
-  .then(data => Book.load(data))
-//  .then(Book.loadAll) same as line before different way
-  .then (callback)
+Book.fetchAll = () => {
+console.log('fetchAll');
+$.get(`${__API_URL__}/api/v1/books`)
+  .then(Book.loadAll)
+  .then(app.bookView.initIndexPage)
   .catch(errorCallback);
-
+}
   module.Book = Book;
+
 })(app)
+
+// app.Book.fetchAll(app.bookView.initIndexPage);
