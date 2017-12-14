@@ -42,6 +42,7 @@ $.get(`${__API_URL__}/api/v1/books`)
   .then(Book.loadAll)
   .then(app.bookView.initIndexPage)
   .catch(errorCallback);
+
 }
   module.Book = Book;
 
