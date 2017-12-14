@@ -1,0 +1,43 @@
+.header-content a img{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  width: 100px;
+}
+
+.header-content h1 {
+  font-family: Arial;
+  font-size: 40px;
+}
+
+.view-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.book-view ul {
+  display: block;
+  width: 480px;
+}
+
+.book-view li {
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.book-view li:last-child {
+  margin-right: 0px;
+}
+
+.book-container img {
+  width: 140px;
+}
+
+.book-overlay h3 {
+  font-weight: bold;
+  width: 120px;
+}
+
+.book-overlay p {
+  font-style: italic;
+}
