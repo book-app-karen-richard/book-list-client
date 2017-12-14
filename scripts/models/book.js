@@ -16,24 +16,21 @@ function Book (bookObj) {
   this.author = bookObj.author;
   this.title = bookObj.title;
   this.image_url = bookObj.image_url;
-  console.log('book_id', this.book_id);
+
   }
 
 Book.prototype.toHtml = function () {
   console.log('tohtml');
   let template = Handlebars.compile($('#book-list-template').text());
-  console.log('temp',template);
   return template(this);
 }
 
 Book.all = [];
 
 Book.loadAll = function (rows) {
-  console.log('rows',rows);
   Book.all = rows.map(function(book) {
      return new Book(book);
    })
-   console.log('Book.all ', Book.all);
 };
 
 Book.fetchAll = () => {
@@ -47,6 +44,7 @@ $.get(`${__API_URL__}/api/v1/books`)
 }
 
 Book.fetchOne = (ctx, callback) => {
+  console.log('fetchone');
   $.get(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
     .then(results => ctx.book = results[0])
     .then(callback)
@@ -56,8 +54,8 @@ Book.fetchOne = (ctx, callback) => {
 Book.create = book => {
   $.post(`${__API_URL__}/api/v1/books`, book)
     .then(() => page('/'))
-    .then catch(errorCallback);
-}    
+    .catch(errorCallback);
+}
 
   module.Book = Book;
 
