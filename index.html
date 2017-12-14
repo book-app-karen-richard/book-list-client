@@ -32,36 +32,41 @@
 
   <body>
 
-  <header>
-    <div class="header-content">
-      <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
-      <h1>Karen & Richard Books</h1>
-    </div>
-  </header>
+    <header>
+      <div class="header-content">
+        <a href="/"><img src="http://www.bootcamps.in/wp-content/uploads/2015/06/code-fellows-shield.png" alt="logo"></a>
+        <h1>Karen & Richard Books</h1>
+      </div>
+    </header>
 
-  <main>
-    <section class="error-view-container">
+    <main>
+      <section class="error-view-container">
         <h2 class="view-title">There's an error</h2>
         <section id="error-message"></section>
-    </section>
+      </section>
 
-    <section class="book-view-container">
+      <section class="book-view-container">
         <h2 class="view-title">BOOKS!</h2>
         <section class="book-view">
           <ul id="book-list"></ul>
         </section>
       </section>
-    </main>
 
-<!-- Application Resources -->
+      <section class="detail-view-container">
+        <h2 class="view-title">Selection</h2>
+        <section id="single-book"></section>
+      </selection>
+    </main> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="./scripts/models/book.js"></script>
-    <script src="./scripts/views/book-view.js" ></script>
-    <script src="./scripts/views/error-view.js" ></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+      <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+      <script src="./scripts/models/book.js"></script>
+      <script src="./scripts/views/book-view.js"></script>
+      <script src="./scripts/views/error-view.js"></script>
+      <script src="./scripts/models/routes.js"></script>
 
-    <!-- <script>app.Book.fetchAll(app.bookView.initIndexPage);</script> -->
+      <!-- <script>app.Book.fetchAll(app.bookView.initIndexPage);</script> -->
 
 
   </body>
