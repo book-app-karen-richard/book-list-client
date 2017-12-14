@@ -16,6 +16,15 @@ var app = app || {};
     console.log('b');
   }
 
+  bookView.initDetailPage = function (ctx) {
+    $('.error-view-container').hide();
+    $('.view-title').show();
+    $('.single-book').empty();
+    let template = Handlebars.compile($('#single-book.template.text()'));
+    $('single-book').append(template(ctx));
+
+  }
+
   $(function() {
     app.Book.fetchAll(app.bookView.initIndexPage);
   })

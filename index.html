@@ -17,7 +17,7 @@
     </script>
 
     <script id="book-list-template" type="text/x-handlebars-template">
-      <li class="book-items">
+      <li class="book-items" data-bookid={{book_id}}>
         <div class="book-container">
           <img src={{image_url}}>
           <div class="book-overlay">
@@ -25,6 +25,7 @@
             <p>{{author}}</p>
           </div>
         </div>
+        <p><a href="/books/{{book-id}}">Click for details</a></p>
       </li>
     </script>
 
@@ -51,7 +52,13 @@
           <ul id="book-list"></ul>
         </section>
       </section>
+
+      <section class="detail-view-container">
+        <h2 class="view-title">Selection</h2>
+        <section id="single-book"></section>
+      </selection>
     </main>
+
 
 <!-- Application Resources -->
 
