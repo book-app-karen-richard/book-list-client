@@ -59,6 +59,19 @@ Book.create = book => {
     .then catch(errorCallback);
 }
 
+
+
+
+
+
+
+
+
+
+
+/books/:book_id
+
+
   module.Book = Book;
 
 })(app)
