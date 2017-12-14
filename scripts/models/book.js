@@ -39,11 +39,26 @@ Book.loadAll = function (rows) {
 Book.fetchAll = () => {
 console.log('fetchAll');
 $.get(`${__API_URL__}/api/v1/books`)
+
   .then(Book.loadAll)
   .then(app.bookView.initIndexPage)
   .catch(errorCallback);
 
 }
+
+Book.fetchOne = (ctx, callback) => {
+  $.get(`${__API_URL__}/api/v1/books/${ctx.params.book_id}`)
+    .then(results => ctx.book = results[0])
+    .then(callback)
+    .catch(errorCallback);
+}
+
+Book.create = book => {
+  $.post(`${__API_URL__}/api/v1/books`, book)
+    .then(() => page('/'))
+    .then catch(errorCallback);
+}    
+
   module.Book = Book;
 
 })(app)
