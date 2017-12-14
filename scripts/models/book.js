@@ -4,7 +4,7 @@ var app =  app || {};
 
 var __API_URL__ = 'http://localhost:3000';
 
-(function (module) {
+(function(module) {
 
 function errorCallback(err) {
   console.error(err);
@@ -57,7 +57,20 @@ Book.create = book => {
   $.post(`${__API_URL__}/api/v1/books`, book)
     .then(() => page('/'))
     .then catch(errorCallback);
-}    
+}
+
+
+
+
+
+
+
+
+
+
+
+/books/:book_id
+
 
   module.Book = Book;
 

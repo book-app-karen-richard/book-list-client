@@ -1,12 +1,20 @@
 .header-content a img{
+  float: left;
   margin-top: 20px;
   margin-bottom: 10px;
-  width: 100px;
+  width: 60px;
 }
 
 .header-content h1 {
+  float: left;
+  margin-top: 45px;
+  margin-left: 10px;
   font-family: Arial;
-  font-size: 40px;
+  font-size: 20px;
+}
+
+main {
+  clear:both;
 }
 
 .view-title {
