@@ -4,7 +4,7 @@ var app =  app || {};
 
 var __API_URL__ = 'http://localhost:3000';
 
-(function (module) {
+(function(module) {
 
 function errorCallback(err) {
   console.error(err);
@@ -54,8 +54,10 @@ Book.fetchOne = (ctx, callback) => {
 Book.create = book => {
   $.post(`${__API_URL__}/api/v1/books`, book)
     .then(() => page('/'))
+
     .catch(errorCallback);
 }
+
 
   module.Book = Book;
 
