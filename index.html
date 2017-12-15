@@ -5,7 +5,6 @@
     <base href=".">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book App</title>
-    <link rel="stylesheet" href="vendor/styles/icons.css">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/icons.css">
     <link rel="stylesheet" href="./styles/base.css">
@@ -42,6 +41,10 @@
           </div>
     </script>
 
+    <script id="create-view-template" type="text/x-handlebars-template">
+
+    </script>
+
   </head>
 
   <body>
@@ -55,8 +58,11 @@
 
     <nav class="main-nav">
       <div class="icon-menu"></div>
+      <ul>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/book/new">ADD BOOK</a></li>
     </nav>
-    
+
     <main>
 
       <section class="error-view-container">
@@ -75,11 +81,28 @@
         <h2>Selection</h2>
         <section id="single-book"></section>
       </section>
+
+      <section class="create-view">
+        <form id="create-form">
+          <label>
+            <input type="text" id="book-title" placeholder="Book title" required>
+          </label>
+          <textarea id="book-body" rows="8" cols="40" required></textarea>
+          <label>
+            <input type="text" id="book-author" placeholder="Author Name" required>
+          </label>
+          <label>
+            <input type="text" id="book-image-url" placeholder="Book-image-URL">
+          </label>
+          <label>
+            <input type="text" id="book-isbn" placeholder="ISBN">
+          </label>          
+        </form>
+      </section>
+
     </main>
 
-
 <!-- Application Resources -->
-
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
@@ -88,9 +111,6 @@
       <script src="./scripts/views/book-view.js"></script>
       <script src="./scripts/views/error-view.js"></script>
       <script src="./scripts/models/routes.js"></script>
-
-      <!-- <script>app.Book.fetchAll(app.bookView.initIndexPage);</script> -->
-
 
   </body>
 </html>
