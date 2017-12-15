@@ -4,7 +4,7 @@ var app =  app || {};
 
 var __API_URL__ = 'http://localhost:3000';
 
-(function (module) {
+(function(module) {
 
 function errorCallback(err) {
   console.error(err);
@@ -56,6 +56,7 @@ Book.create = book => {
     .then(() => page('/'))
     .catch(errorCallback);
 }
+
 
   module.Book = Book;
 
