@@ -10,6 +10,8 @@ var app = app || {};
     console.log('init');
     $('.error-view-container').hide();
     $('.book-view-containter').show();
+    $('.detail-view-container').hide();
+    $('.create-view').hide();
     $('#book-list').empty();
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
   }
@@ -18,6 +20,8 @@ var app = app || {};
     console.log(ctx);
     $('.error-view-container').hide();
     $('.book-view-container').hide();
+    $('.detail-view-container').hide();
+    $('.create-view').hide();
     $('#single-book').empty();
     $('.detail-view-container').show();
     let template = Handlebars.compile($('#detail-view-template').text());
@@ -29,6 +33,8 @@ var app = app || {};
     console.log('create', ctx);
     $('.error-view-container').hide();
     $('.book-view-container').hide();
+    $('.detail-view-container').hide();
+    $('.create-view').hide();
     $('.create-view').show();
     $('#create-form').on('submit', function(event) {
       event.preventDefault();

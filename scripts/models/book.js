@@ -52,6 +52,7 @@ Book.fetchOne = (ctx, callback) => {
 }
 
 Book.create = book => {
+  console.log('create');
   $.post(`${__API_URL__}/api/v1/books`, book)
     .then(() => page('/'))
     .catch(errorCallback);
