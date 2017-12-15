@@ -9,7 +9,7 @@ var app = app || {};
   bookView.initIndexPage = function() {
     console.log('init');
     $('.error-view-container').hide();
-    $('.book-view').show();
+    $('.book-view-containter').show();
     $('#book-list').empty();
     console.log('a');
     app.Book.all.map(book => $('#book-list').append(book.toHtml()));
@@ -17,11 +17,13 @@ var app = app || {};
   }
 
   bookView.initDetailPage = function (ctx) {
+    console.log(ctx);
     $('.error-view-container').hide();
-    $('.view-title').show();
-    $('.single-book').empty();
-    let template = Handlebars.compile($('#single-book.template.text()'));
-    $('single-book').append(template(ctx));
+    $('.book-view-container').hide();
+    $('#single-book').empty();
+    $('.detail-view-container').show();
+    let template = Handlebars.compile($('#single-book').text());
+    $('#single-book').append(template(ctx));
 
   }
 

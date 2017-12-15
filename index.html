@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <base href=".">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book App</title>
     <link rel="stylesheet" href="vendor/styles/icons.css">
@@ -14,7 +15,7 @@
 
 <!-- Application templates -->
     <script id="error-template" type="text/x-handlebars-template">
-      <h3>Something wnet wrong!!</h3>
+      <h3>Something went wrong!!</h3>
       <p>{{status}}: {{statusText}}</p>
     </script>
 
@@ -27,8 +28,18 @@
             <p>{{author}}</p>
           </div>
         </div>
-        <p><a href="/books/{{book-id}}">Click for details</a></p>
+        <p><a href="/books/{{book_id}}">Click for details</a></p>
       </li>
+    </script>
+
+    <script id="detail-view-template" type="text/x-handlebars-template">
+          <div class="view-title" data-bookid={{book_id}}>
+          <img src={{image_url}}>
+            <h3>{{title}}</h3>
+            <p>{{author}}</p>
+            <p>{{isbn}}</p>
+            <p>{{description}}</p>
+          </div>
     </script>
 
   </head>
@@ -61,9 +72,9 @@
       </section>
 
       <section class="detail-view-container">
-        <h2 class="view-title">Selection</h2>
+        <h2>Selection</h2>
         <section id="single-book"></section>
-      </selection>
+      </section>
     </main>
 
 
