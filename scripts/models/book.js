@@ -16,11 +16,12 @@ function Book (bookObj) {
   this.author = bookObj.author;
   this.title = bookObj.title;
   this.image_url = bookObj.image_url;
+  this.isbn = bookObj.isbn;
+  this.description = bookObj.description;
 
   }
 
 Book.prototype.toHtml = function () {
-  console.log('tohtml');
   let template = Handlebars.compile($('#book-list-template').text());
   return template(this);
 }
@@ -28,17 +29,19 @@ Book.prototype.toHtml = function () {
 Book.all = [];
 
 Book.loadAll = function (rows) {
+  console.log('load', rows);
   Book.all = rows.map(function(book) {
+    console.log(book);
      return new Book(book);
    })
 };
 
-Book.fetchAll = () => {
+Book.fetchAll = (callback) => {
 console.log('fetchAll');
 $.get(`${__API_URL__}/api/v1/books`)
 
-  .then(Book.loadAll)
-  .then(app.bookView.initIndexPage)
+  .then(data => Book.loadAll(data))
+  .then(callback)
   .catch(errorCallback);
 
 }
@@ -52,7 +55,7 @@ Book.fetchOne = (ctx, callback) => {
 }
 
 Book.create = book => {
-  console.log('create');
+  console.log('create book', book);
   $.post(`${__API_URL__}/api/v1/books`, book)
     .then(() => page('/'))
     .catch(errorCallback);
@@ -62,5 +65,3 @@ Book.create = book => {
   module.Book = Book;
 
 })(app)
-
-// app.Book.fetchAll(app.bookView.initIndexPage);
