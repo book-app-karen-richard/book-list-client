@@ -85,22 +85,12 @@
       <section class="create-view">
         <h2>Add A New Book</h2>
         <form id="create-form">
-          <label>
-            <input type="text" id="book-title" placeholder="Book title" required>
-          </label>
-          <textarea id="book-body" rows="8" cols="40" required></textarea>
-          <label>
-            <input type="text" id="book-author" placeholder="Author Name" required>
-          </label>
-          <label>
-            <input type="text" id="book-image-url" placeholder="Book-image-URL">
-          </label>
-          <label>
-            <input type="text" id="book-isbn" placeholder="ISBN">
-          </label>
-            <button type="button">Click To Submit</button>
-          <label>
-          </label>
+            <input type="text" name="title" id="book-title" placeholder="Book title" required>
+            <textarea name="description" id="book-body" rows="8" cols="40" required></textarea>
+            <input type="text" name="author" id="book-author" placeholder="Author Name" required>
+            <input type="text" name="image_url" id="book-image-url" placeholder="Book-image-URL">
+            <input type="text" name="isbn" id="book-isbn" placeholder="ISBN">
+            <button id="new-book" type="submit">Click To Submit</button>
         </form>
       </section>
 
