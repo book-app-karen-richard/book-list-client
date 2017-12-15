@@ -52,6 +52,10 @@ var app = app || {};
 
   }
 
+  $('.icon-menu').click(function(){
+    $('.tab').toggle();
+  });
+
   $(function() {
     app.Book.fetchAll(app.bookView.initIndexPage);
   })
