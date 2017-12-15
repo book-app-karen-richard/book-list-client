@@ -49,10 +49,14 @@ var app = app || {};
     })
 
   }
-  //
-  // $(function() {
-  //   app.Book.fetchAll(app.bookView.initIndexPage);
-  // })
+
+  $('.icon-menu').click(function(){
+    $('.tab').toggle();
+  });
+
+  $(function() {
+    app.Book.fetchAll(app.bookView.initIndexPage);
+  })
 
   module.bookView = bookView;
 
