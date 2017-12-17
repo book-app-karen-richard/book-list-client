@@ -39,11 +39,9 @@ Book.loadAll = function (rows) {
 Book.fetchAll = (callback) => {
 console.log('fetchAll');
 $.get(`${__API_URL__}/api/v1/books`)
-
   .then(data => Book.loadAll(data))
   .then(callback)
   .catch(errorCallback);
-
 }
 
 Book.fetchOne = (ctx, callback) => {
@@ -60,6 +58,15 @@ Book.create = book => {
     .then(() => page('/'))
     .catch(errorCallback);
 }
+
+Book.truncateTable = callback => {
+    $.ajax({
+      url: `${__API_URL__}/api/v1/books/${this.book_id}`,
+      method: 'DELETE',
+    })
+      .then(console.log)
+      .then(callback);
+  };
 
 // Book.delete = function(callback){
 //   $.ajax({

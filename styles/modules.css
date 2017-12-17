@@ -61,7 +61,7 @@ main {
 }
 
 .book-container img {
-  width: 400px;
+  width: 60%;
   display: block;
   margin: 0 auto;
 }
@@ -122,6 +122,7 @@ main {
 
 #detail-isbn {
   float: right;
+  margin-right: 10px;
 }
 
 .view-title img {
@@ -136,6 +137,32 @@ main {
 #detail-description {
   margin-top: 60px;
   padding: 5px;
+  text-align: justify;
+}
+
+#update-book {
+  display: block;
+  float: right;
+  padding: 10px;
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 10px;
+  font-size: 20px;
+  border: none;
+  width: 150px;
+}
+
+#delete-book {
+  display: block;
+  float: right;
+  padding: 10px;
+  font-size: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  width: 150px;
+  margin-top: 30px;
+  margin-right: 85px;
 }
 
 /* Styling the Form */
