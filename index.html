@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <base href=".">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book App</title>
+    <title>Books App</title>
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/icons.css">
     <link rel="stylesheet" href="./styles/base.css">
@@ -27,23 +27,24 @@
             <p>{{author}}</p>
           </div>
         </div>
-        <p><a href="/books/{{book_id}}">Click for details</a></p>
+        <button><a class="details-link" href="/books/{{book_id}}">View Details</a></button>
       </li>
     </script>
 
     <script id="detail-view-template" type="text/x-handlebars-template">
-          <div class="view-title" data-bookid={{book_id}}>
+        <div class="view-title" data-bookid={{book_id}}>
+          <h3>{{title}}</h3>
+          <p id="detail-author">{{author}}</p>
+          <p id="detail-isbn">{{isbn}}</p>
           <img src={{image_url}}>
-            <h3>{{title}}</h3>
-            <p>{{author}}</p>
-            <p>{{isbn}}</p>
-            <p>{{description}}</p>
-          </div>
+          <p id="detail-description">{{description}}</p>
+        </div>
+        <button id="update-book">Update</button>
+        <button id="delete-book">Delete</button>
     </script>
 
     <script id="create-view-template" type="text/x-handlebars-template">
-
-    </script>
+</script>
 
   </head>
 
@@ -59,8 +60,8 @@
     <nav class="main-nav">
       <div class="icon-menu"></div>
         <ul>
-          <li class="tab"><a href="/">HOME</a></li>
-          <li class="tab"><a href="/book/new">ADD BOOK</a></li>
+          <li class="tab" id="main"><a href="./">View All Books</a></li>
+          <li class="tab" id="add"><a href="./book/new">Add A New Book</a></li>
         </ul>
     </nav>
 
@@ -78,18 +79,17 @@
       </section>
 
       <section class="detail-view-container">
-        <h2>Selection</h2>
         <section id="single-book"></section>
       </section>
 
       <section class="create-view">
-        <h2>Add A New Book</h2>
+        <h2>add a new book</h2>
         <form id="create-form">
-            <input type="text" name="title" id="book-title" placeholder="Book title" required>
-            <textarea name="description" id="book-body" rows="8" cols="40" required></textarea>
-            <input type="text" name="author" id="book-author" placeholder="Author Name" required>
-            <input type="text" name="image_url" id="book-image-url" placeholder="Book-image-URL">
-            <input type="text" name="isbn" id="book-isbn" placeholder="ISBN">
+            <input type="text" name="title" id="book-title" placeholder="title" required>
+            <input type="text" name="author" id="book-author" placeholder="author" required>
+            <input type="text" name="isbn" id="book-isbn" placeholder="isbn">
+            <input type="text" name="image_url" id="book-image-url" placeholder="image url">
+            <textarea name="description" id="book-body" rows="8" cols="40" placeholder="description..." required></textarea>
             <button id="new-book" type="submit">Click To Submit</button>
         </form>
       </section>
@@ -105,6 +105,10 @@
       <script src="./scripts/views/book-view.js"></script>
       <script src="./scripts/views/error-view.js"></script>
       <script src="./scripts/models/routes.js"></script>
+
+    <footer>
+
+    </footer>
 
   </body>
 </html>
