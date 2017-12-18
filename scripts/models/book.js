@@ -62,6 +62,29 @@ Book.create = book => {
     .catch(errorCallback);
 }
 
+Book.update = (ctx, callback) => {
+  //This is where the update function would go
+  $.put()
+}
+
+Book.destroy = (cts, callback) => {
+  //This is where the destroy function would go
+  $.delete();
+}
+
+Book.find = (book, callback) => {
+  $.get(`${__API_URL__}/api/v1/books/find`, book)
+    .then(Book.loadAll)
+    .then(callback)
+    .catch(errorCallback);
+}
+
+Book.findOne = {
+  $.get((`${__API_URL__}/api/v1/books/find/${isbn}`)
+    .then(Book.create)
+    .catch(errorCallback);
+}
+
 
   module.Book = Book;
 
