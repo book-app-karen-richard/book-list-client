@@ -2,7 +2,8 @@
 
 var app =  app || {};
 
-var __API_URL__ = 'http://localhost:3000';
+// var __API_URL__ = 'http://localhost:3000';
+var __API_URL__ =  'https://kp-rm-booklist.herokuapp.com';
 
 (function(module) {
 
@@ -29,7 +30,7 @@ Book.prototype.toHtml = function () {
 Book.all = [];
 
 Book.loadAll = function (rows) {
-  console.log('load', rows);
+  console.log('load');
   Book.all = rows.map(function(book) {
     console.log(book);
      return new Book(book);
